@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Flask cache and debug files
+instance/
+.webassets-cache
+*.log
+
+# Pytest and coverage
+.coverage
+.cache/
+.pytest_cache/
+
+# VS Code and IDEs
+.vscode/
+.idea/
+
+# Python environment settings
+*.env
+.env.*
+*.secret
+*.token
+
+# SQLite database (if used)
+*.sqlite3
+*.db
+
+# MacOS
+.DS_Store
+
+# Pip dependency files
+pip-log.txt
+
+# Migrations (optional, if using Flask-Migrate)
+migrations/
+
+# Optional: Ignore compiled HTML/static assets if built
+build/
+dist/
+*.egg-info/
