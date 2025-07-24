@@ -31,3 +31,22 @@ def delete_note(note_id):
     db.session.delete(note)
     db.session.commit()
     return jsonify({"message": "Note has been deleted successfully."}), 200
+
+@note_bp.route("/<int:note_id", methods=["PATCH"])
+def update_note(note_id):
+    data = request.get_json
+    note = Note.query.get_or_404(note_id)
+    
+    if not data:
+        return jsonify({"error": "Note cannot be empty"})
+    
+    # update provided fields
+    if "title" in data:
+        note.title = data["title"]
+    if "content" in data:
+        note.content = data["content"]
+    db.session.commit()
+    return jsonify(note.to_dict()), 200
+        
+    
+    
