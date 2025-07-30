@@ -32,7 +32,7 @@ def delete_note(note_id):
     db.session.commit()
     return jsonify({"message": "Note has been deleted successfully."}), 200
 
-@note_bp.route("/<int:note_id", methods=["PATCH"])
+@note_bp.route("/<int:note_id>", methods=["PATCH"])
 def update_note(note_id):
     data = request.get_json
     note = Note.query.get_or_404(note_id)
