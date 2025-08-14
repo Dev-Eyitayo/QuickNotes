@@ -40,7 +40,7 @@ def update_note(note_id):
     if not data:
         return jsonify({"error": "Note cannot be empty"})
     
-    # update provided fields
+    # update fields
     if "title" in data:
         note.title = data["title"]
     if "content" in data:
@@ -50,3 +50,4 @@ def update_note(note_id):
         
     
     
+
