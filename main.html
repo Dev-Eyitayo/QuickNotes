@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rigo Microfinance Bank</title>
+  <style>
+    :root {
+      --primary-color: #0a1931;
+      --accent-color: #f9b233;
+      --light-bg: #f7f8fa;
+      --text-dark: #1c1c1c;
+      --text-light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--light-bg);
+      scroll-behavior: smooth;
+    }
+
+    /* === NAVBAR === */
+    header {
+      width: 100%;
+      background: var(--primary-color);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      color: var(--text-light);
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    /* === HERO SECTION === */
+    #hero {
+      height: 100vh;
+      background: url('bank.jpg') no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+      margin-top: 0px;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 25, 47, 0.75);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--text-light);
+      max-width: 800px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-content a {
+      background: var(--accent-color);
+      color: var(--primary-color);
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .hero-content a:hover {
+      background: #ffca4b;
+      transform: translateY(-2px);
+    }
+
+    /* === ABOUT === */
+    section {
+      padding: 5rem 10%;
+    }
+
+    #about {
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    #about h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    #about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+    }
+
+    /* === SERVICES === */
+    #services {
+      background: var(--primary-color);
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    #services h2 {
+      color: var(--accent-color);
+      margin-bottom: 2rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .service h3 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    /* === TESTIMONIALS === */
+    #testimonials {
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    .testimonial {
+      max-width: 700px;
+      margin: 0 auto;
+      font-style: italic;
+      color: #444;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* === CONTACT / FOOTER === */
+    footer {
+      background: var(--primary-color);
+      color: var(--text-light);
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rigo Microfinance Bank</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Empowering Dreams. Building Financial Freedom.</h1>
+      <p>At Rigo Microfinance Bank, we believe in providing financial solutions that help individuals and businesses thrive.</p>
+      <a href="#contact">Get Started</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Rigo Microfinance Bank is committed to driving financial inclusion by providing accessible banking services, flexible loan options, and growth support for individuals and SMEs. Our goal is to empower people through trust, innovation, and community-driven finance.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service">
+        <h3>Personal Loans</h3>
+        <p>Flexible and affordable loans to help you meet your personal goals.</p>
+      </div>
+      <div class="service">
+        <h3>SME Support</h3>
+        <p>Tailored financial solutions to help small and medium enterprises grow.</p>
+      </div>
+      <div class="service">
+        <h3>Savings Plans</h3>
+        <p>Secure savings accounts with competitive interest rates and easy access.</p>
+      </div>
+      <div class="service">
+        <h3>Investment Options</h3>
+        <p>Grow your wealth with our safe and rewarding investment packages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>“Rigo Microfinance Bank helped me grow my small business with their affordable SME loan. The process was seamless and transparent.”</p>
+      <span>- Chika, Entrepreneur</span>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Ready to take the next step? <a href="mailto:info@rigobank.com">Contact Us</a></p>
+    <p>© 2025 Rigo Microfinance Bank. All rights reserved.</p>
+  </footer>
+</body>
+</html>
